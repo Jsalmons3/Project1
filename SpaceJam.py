@@ -32,10 +32,20 @@ class MyApp(ShowBase):
         self.Planet6.reparentTo(self.render)
         self.Planet6.setPos(4500, 5000, 67)
         self.Planet6.setScale(500)
+        self.Spacestation = self.loader.loadModel("./Assets/Space Station/SpaceStation1B/spaceStation.x")
+        self.Spacestation.reparentTo(self.render)
+        self.Spacestation.setPos(6000, 1000, 67)
+        self.Spacestation.setScale(200)
+        self.Ship = self.loader.loadModel("./Assets/Spaceships/Dumbledore/Dumbledore.x")
+        self.Ship.reparentTo(self.render)
+        self.Ship.setPos(0, 0, 100)
+        self.Ship.setScale(50)
 
     def loadTexture(self):
         tex = self.loader.loadTexture("./Assets/Universe/Universe/Universe.jpg")
         self.Universe.setTexture(tex, 1)
+        shipTex = self.loader.loadTexture("./Assets/Spaceships/Dumbledore/Dumbledore.jpg")
+        self.Ship.setTexture(shipTex, 1)
 
 app = MyApp()
 app.SetupScene()
